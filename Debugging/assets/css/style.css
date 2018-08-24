@@ -1,0 +1,24 @@
+span {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+}
+span.name {
+  font-weight: bolder;
+}
+span.value {
+  color: #BF3624;
+  font-weight: bold;
+  font-size: 15px;
+}
+span.length {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 15px;
+}
+span.size {
+  font-style: italic;
+  font-size: 15px;
+}
+span.type {
+  font-size: 11px;
+}

@@ -1,0 +1,52 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border-collapse: collapse;
+}
+body div.wrapper div.checkboard {
+  display: inline;
+  font-size: 0;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  margin-right: 50px;
+}
+body div.wrapper div.checkboard div.row {
+  display: inline-table;
+}
+body div.wrapper div.checkboard div.row div.red {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  color: lawngreen;
+}
+body div.wrapper div.checkboard div.row div.black {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  color: lawngreen;
+}
+body div.wrapper div.checkboard2 {
+  display: inline;
+  font-size: 0;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+}
+body div.wrapper div.checkboard2 div.row {
+  display: inline-table;
+}
+body div.wrapper div.checkboard2 div.row div.greenish {
+  background-color: #FFFFE0;
+  width: 50px;
+  height: 50px;
+  color: lawngreen;
+}
+body div.wrapper div.checkboard2 div.row div.green {
+  background-color: #556B2F;
+  width: 50px;
+  height: 50px;
+  color: lawngreen;
+}

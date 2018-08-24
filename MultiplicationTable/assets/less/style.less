@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    // outline: 1px dashed lawngreen;
+    border-collapse: collapse;
+}
+
+body{
+    table{        
+        border: 3px solid black;      
+        tr:nth-child(even){
+            background-color: lightgrey;
+        }
+        tr:first-child{
+            td{
+                font-size: 25px;
+                font-weight: bolder;
+            }
+        }      
+        tr{            
+            td{                
+                text-align: center;
+                height: 50px;
+                width: 50px;
+                border: 2px solid black;
+                // font-size: 30px;
+            }
+            td:first-child{
+                font-size: 25px;
+                font-weight: bolder;
+            }               
+        }
+        tr:first-child{
+            td:first-child{
+                color: transparent;
+            }
+        }        
+    }
+}

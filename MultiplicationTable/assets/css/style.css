@@ -1,0 +1,28 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border-collapse: collapse;
+}
+body table {
+  border: 3px solid black;
+}
+body table tr:nth-child(even) {
+  background-color: lightgrey;
+}
+body table tr:first-child td {
+  font-size: 25px;
+  font-weight: bolder;
+}
+body table tr td {
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  border: 2px solid black;
+}
+body table tr td:first-child {
+  font-size: 25px;
+  font-weight: bolder;
+}
+body table tr:first-child td:first-child {
+  color: transparent;
+}
