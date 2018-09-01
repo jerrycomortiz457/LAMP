@@ -1,25 +1,29 @@
 <?php
 
 $time_start = microtime(true);
+ini_set('max_execution_time', 600);
 
     function selectionSort($array){
         $min = '';
         $max = '';
+        $count = '';
        
       for($i=0;$i<count($array);$i++)
         {
             $temp = $array[$i];
             for($j=0;$j<count($array);$j++)
-            {    
+            {   
+                
                 if($temp<$array[$j])
                 {         
                     $temp = $array[$j];    
-                    $min = $temp;                                
+                    $min = $temp;  
+                    $count++;                              
                 }
-
-                if($max>$array[$j])
-                {                    
+                else
+                {                                   
                     $max = $array[$j];
+                    $count++;   
                 }
                 
                 $index_of_temp = array_search($temp, $array);
@@ -31,13 +35,14 @@ $time_start = microtime(true);
         for($num=0;$num<count($array);$num++)
         {
             echo "<pre>$array[$num]</pre>";
-        }    
+        } 
+        echo "if/else counter: $count";   
 
         // print_r($array);      
     }
 
     $test_array = array();
-    for($x=0;$x<1000;$x++)
+    for($x=0;$x<10000;$x++)
     {
         array_push($test_array,rand(1,1000));        
     }
@@ -45,6 +50,6 @@ $time_start = microtime(true);
 
 $time_end = microtime(true);
 $time = $time_end-$time_start;
-echo "Time elapsed: $time second(s)";    
+echo "<br>Time elapsed: $time second(s)";    
 
 ?>
