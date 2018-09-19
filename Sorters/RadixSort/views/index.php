@@ -1,37 +1,52 @@
 <?php
 
-function placeValues($array,$placeholder){
+$test_array = array(1,456,7829);
 
-    for( $i = 0; $i<count($array) ; $i++ )
-    {
-        $num = $array[$i];
+function placeValues($num,$placeholder){
+
+    // for( $i = 0; $i<count($array) ; $i++ )
+    // {
+        // $num = $array[$i];
         switch ($placeholder)
         {
-            case 'ones':
-                echo ($num%10).' - ones';
+            case 1:
+                $ones = ($num%10);
+                // echo $ones;
             break;
             
-            case 'tens':
-                echo (($num/10)%10).' - tens';
+            case 2:
+                $tens = (($num/10)%10);
+                // echo $tens;
             break;
             
-            case 'hundreds':
-                echo (($num/100)%10).' - hundreds';  
-            break;
-            
-            case 'thousands':
-              echo (($num/1000)%10).' - thousands'; 
-            break;
-            
-            case 'ten thousands':
-                echo (($num/10000)%10).' - ten thousands'; 
-            break;
+            case 3:
+                $hundreds = (($num/100)%10);  
+                // echo $hundreds;
+            break;      
+           
         }
-        echo "<br />";
-    }
-}
+        
+    // }
+}     
+        // placeValues(123,3);
+        $counter_array = array(0,0,0,0,0,0,0,0,0,0);
+        // $counter = 1;
+        function analyzer($array){
+            
+            for($i = 0;$i<count($array);$i++)
+            {
+                $test_num = placeValues($array[$i],1);
+                echo strlen((string)$array[$i]);
 
-$test_array = array(123,456,789);
-placeValues($test_array,'thousands');
+                $counter_array[$test_num];             
+              
+            }
+
+        }
+        print_r($counter_array);
+
+        analyzer($test_array);
+
+        echo '<br>working!';
 
 ?>
