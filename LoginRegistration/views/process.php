@@ -7,10 +7,17 @@
         register_user($_POST);
     }  
 
-    if(isset($_POST['action']) && $_POST['action'] == 'login')
+    else if(isset($_POST['action']) && $_POST['action'] == 'login')
     {
         login_user($_POST);
-    }  
+    } 
+    
+    else 
+    {
+        session_destroy();
+        header('Location: index.php');
+        die();
+    }
 
     function register_user($post){
         $_SESSION['errors'] = array();
@@ -85,6 +92,7 @@
             $query = "INSERT INTO users(first_name, last_name, email_address, password, salt, created_at, updated_at) VALUES('{$first_name}', '{$last_name}', '{$email_address}', '{$password}','{$salt}', NOW(), NOW())";
             run_mysql_query($query);
             header('Location: success.php');
+            die();
         }       
     }
 
@@ -93,11 +101,17 @@
         $user = fetch_all($query);
         if(count($user) > 0)
         {
-            var_dump($user);
+            $_SESSION['user_id'] = $user[0]['id'];
+            $_SESSION['first_name'] = $user[0]['first_name'];
+            $_SESSION['logged_in'] = TRUE;
+            $_SESSION['success'] = "Welcome {$_SESSION['first_name']}!";
+            header('Location: success.php');
+            die();
         }
         else
         {
-            echo "Can't find credentials!";
+            $_SESSION['errors'][] = "Can't find credentials!";
+            header('Location: index.php');
         }
     }
 ?>
