@@ -6,10 +6,9 @@
     {
         foreach($_SESSION['errors'] as $errors)
         {
-            echo "<p>{$errors}</p>";
+            echo "<p class='warnings'>{$errors}</p>";
         }
     }
-    // var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +18,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Email Validation with Database</title>
+    <link rel="stylesheet" href="../assets/css/home.css">
 </head>
 <body>
+    <h3>Validate and save an email address, Enter here:</h3>
     <form action="process.php" method="POST">
         <input type="text" name="emailcheck" id="emailcheck">        
         <input type="hidden" name="action" value="validate">
         <input type="submit" value="Validate" name="validate">
     </form>
-    
 </body>
 </html>   

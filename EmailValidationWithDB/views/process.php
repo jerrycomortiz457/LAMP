@@ -41,10 +41,6 @@
             
             header('Location: success.php');
         }
-
     }
-
-
-    // header('Location: home.php');
 
 ?>
