@@ -42,5 +42,21 @@
             header('Location: success.php');
         }
     }
+    
+    if(isset($_POST['back']) && $_POST['back'] == 'Back')
+    {
+        session_start();
+        session_destroy();
+        header('Location: index.php');
+    }
+    if(isset($_POST['reset']) && $_POST['reset'] == 'Reset')
+    {
+        session_start();
+        session_destroy();        
+        $query = "TRUNCATE TABLE emails";
+        run_mysql_query($query);        
+        header('Location: index.php');
+    }
+
 
 ?>

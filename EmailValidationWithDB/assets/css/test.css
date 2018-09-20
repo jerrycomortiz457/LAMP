@@ -9,7 +9,7 @@ body #email_valid_notification {
   font-size: 12px;
   text-align: center;
   color: white;
-  width: 475px;
+  width: 550px;
   margin: 10px auto;
 }
 body #email_valid_notification h3 {
@@ -19,8 +19,30 @@ body #email_valid_notification h3 {
 body #email_table {
   text-align: left;
   background-color: black;
-  width: 475px;
+  width: 550px;
   margin: 10px auto;
   color: white;
   border-radius: 5px;
+  padding: 0 10px;
+}
+body #email_table table tr td:first-child {
+  padding-left: 30px;
+}
+body #email_table table tr td:nth-child(2) {
+  text-align: center;
+}
+body #email_table table tr td:nth-child(3) {
+  text-align: right;
+}
+body #email_table table tr td {
+  width: 350px;
+}
+body #resetarea {
+  text-align: center;
+}
+body #resetarea #reset,
+body #resetarea #back {
+  display: block;
+  width: 410px;
+  margin: 10px auto;
 }

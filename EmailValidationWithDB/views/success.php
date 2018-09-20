@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Email Address Validated</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/test.css">
 </head>
 <body>
     <?php
@@ -38,10 +38,8 @@
     </div>
     <div id="resetarea">
         <h4>Delete and reset all data in the email address database</h4>
-        <form action="reset.php" method="post">           
-            <input type="submit" value="Reset" name="reset" id="reset">
-        </form>
-        <form action="back.php" method="post">           
+        <form action="process.php" method="post">           
+            <input type="submit" value="Reset" name="reset" id="reset">           
             <input type="submit" value="Back" name="back" id="back">
         </form>
     </div>
