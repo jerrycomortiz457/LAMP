@@ -1,5 +1,7 @@
 <?php
     session_start();
+    // session_destroy();
+
     require('new-connection.php');
 
     if(empty($_SESSION['errors']))

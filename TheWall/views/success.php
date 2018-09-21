@@ -9,6 +9,7 @@
     else
     {
         echo $_SESSION['success'];
+        echo "<a href='wall.php'>Go to CodingDojo Wall</a>";
         echo "<a href='process.php'>Log Out</a>";
     }
     

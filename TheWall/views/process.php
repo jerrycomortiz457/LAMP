@@ -11,7 +11,14 @@
     {
         login_user($_POST);
     } 
-    
+    else if(isset($_POST['action']) && $_POST['action'] == 'post')
+    {
+        post_message($_POST);
+    }
+    else if(isset($_POST['action']) && $_POST['action'] == 'comment')
+    {
+        post_comment($_POST);
+    }
     else 
     {
         session_destroy();
@@ -123,6 +130,9 @@
         {
             $_SESSION['user_id'] = $user[0]['id'];
             $_SESSION['first_name'] = $user[0]['first_name'];
+            $_SESSION['last_name'] = $user[0]['last_name'];
+            $_SESSION['created_at'] = $user[0]['created_at'];
+            $_SESSION['updated_at'] = $user[0]['updated_at'];
             $_SESSION['logged_in'] = TRUE;
             $_SESSION['success'] = "Welcome {$_SESSION['first_name']}!";
             header('Location: success.php');
@@ -133,5 +143,31 @@
             $_SESSION['errors'][] = "Can't find credentials!";
             header('Location: index.php');
         }
+    }
+
+    function post_message($post){
+        $_SESSION['posts'] = array();
+        $message = escape_this_string($post['post']);
+      
+        $_SESSION['posts'][] =  $message;        
+        $query = "INSERT INTO messages(user_id, message, created_at, updated_at) VALUES('{$_SESSION['user_id']}','{$message}',NOW(),NOW())";
+        run_mysql_query($query);
+        header('Location: wall.php');
+    }
+
+    function post_comment($post){
+        
+        $comment = escape_this_string($post['comment']);
+        $_SESSION['comments'] = $comment;
+        $query = "SELECT messages.id AS id_of_message, comments.user_id AS id_of_user FROM users JOIN messages ON users.id = messages.user_id JOIN comments ON messages.id = comments.message_id";
+        $get_data = fetch_all($query);
+      
+        $message_id = $post['message_id'];
+        $query = "INSERT INTO comments(message_id, user_id, comment, created_at, updated_at) VALUES('$message_id','{$_SESSION['user_id']}', '{$comment}', NOW(), NOW())";
+        run_mysql_query($query);
+
+        header('Location: wall.php');
+
+
     }
 ?>
