@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login and Registration</title>
-    <link rel="stylesheet" href="../assets/css/test.css">
+    <link rel="stylesheet" href="../assets/css/test_index.css">
 </head>
 <body>
     <div id="wrapper">  

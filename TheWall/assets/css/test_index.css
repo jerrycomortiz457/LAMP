@@ -7,7 +7,19 @@ p.errors {
   font-size: 11px;
   color: red;
 }
+body .errors {
+  text-align: center;
+}
 body #wrapper {
+  width: 500px;
+  padding: 5px;
+}
+body #wrapper h2 {
+  background-color: #3B5998;
+  text-shadow: 1px 1px 5px white;
+}
+body #wrapper form {
+  background-color: #E9EBEE;
   padding: 5px;
 }
 body #wrapper form label {

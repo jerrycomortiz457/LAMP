@@ -5,8 +5,7 @@
     if(isset($_POST['action']) && $_POST['action'] == 'register')
     {
         register_user($_POST);
-    }  
-
+    } 
     else if(isset($_POST['action']) && $_POST['action'] == 'login')
     {
         login_user($_POST);
@@ -14,10 +13,15 @@
     else if(isset($_POST['action']) && $_POST['action'] == 'post')
     {
         post_message($_POST);
+      
     }
     else if(isset($_POST['action']) && $_POST['action'] == 'comment')
     {
-        post_comment($_POST);
+        post_comment($_POST);  
+    }
+    else if(isset($_POST['action']) && $_POST['action'] == 'delete')
+    {
+        delete_message($_POST);
     }
     else 
     {
@@ -103,7 +107,7 @@
         }
         else
         {
-            $_SESSION['success'] = "Congratulations! You have successfully registered.";
+            $_SESSION['success'] = "<p>Congratulations! You have successfully registered.</p>";
             $_SESSION['registered'] = TRUE;
             $first_name = escape_this_string($post['first_name']);
             $last_name = escape_this_string($post['last_name']);
@@ -134,7 +138,7 @@
             $_SESSION['created_at'] = $user[0]['created_at'];
             $_SESSION['updated_at'] = $user[0]['updated_at'];
             $_SESSION['logged_in'] = TRUE;
-            $_SESSION['success'] = "Welcome {$_SESSION['first_name']}!";
+            $_SESSION['success'] = "<h2>Welcome {$_SESSION['first_name']}!</h2>";
             header('Location: success.php');
             die();
         }
@@ -146,6 +150,7 @@
     }
 
     function post_message($post){
+        
         $_SESSION['posts'] = array();
         $message = escape_this_string($post['post']);
       
@@ -167,7 +172,24 @@
         run_mysql_query($query);
 
         header('Location: wall.php');
-
-
     }
+
+    function delete_message($post)
+    {
+
+        run_mysql_query("SET FOREIGN_KEY_CHECKS = 0");
+        $message_id_to_delete = $post['delete_id'];
+        $query = "DELETE FROM messages WHERE id =  $message_id_to_delete";
+        run_mysql_query($query);     
+        run_mysql_query("SET FOREIGN_KEY_CHECKS = 1");   
+        header('Location:wall.php');
+    }
+
+    function refresh_page()
+    {
+        header("Location: wall.php");
+    }
+
+    
+
 ?>
