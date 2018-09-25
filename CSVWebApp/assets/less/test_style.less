@@ -1,0 +1,144 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    // outline: 1px dashed lawngreen;
+}
+
+
+#pagination_area{
+    width: 20%;
+    min-width: 324px;
+     margin: 0 auto;
+}
+.pagination{
+    margin: 0 auto;
+}
+
+/* Pagination links */
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+#upload_area form{
+    width: 555px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+#main table{
+    margin:0 auto;
+    text-align: center;
+}   
+
+body{
+
+    #wrapper { 
+
+        #header { 
+            text-align: center;
+            
+        }
+    
+        #main { 
+    
+            #upload_area { 
+    
+                form { 
+                    font-weight: 500;
+                    #file { 
+    
+                    }
+    
+                    input { 
+    
+                    }
+                }
+            }
+    
+            #diplay_table { 
+    
+                table { 
+                    margin-bottom: 25px;  
+                      
+                    thead { 
+    
+                        tr { 
+                            th:first-child{
+                                border-top-left-radius: 10px;
+                            }
+                            th:last-child{
+                                border-top-right-radius: 10px;
+                            }
+                            th { 
+                                background-color: #3B5998;
+                                color:white;
+                            }
+                        }
+                    }
+    
+                    tbody { 
+                      
+                        tr:nth-child(even){
+                            background-color:#DDE2ED; 
+                            font-weight: 500;
+                        }
+                        tr:nth-child(odd){
+                            background-color:#9CB4D8;
+                            font-weight: 500; 
+                        }
+                        tr:last-child{
+                            
+                            td:last-child{
+                                // color:green;
+                                border-bottom-right-radius: 10px;
+                                
+                            }
+                        }
+                        tr:last-child{
+                            
+                            td:first-child{
+                                // color:green;
+                                border-bottom-left-radius: 10px;
+                                
+                            }
+                        }
+                        tr{
+                            td { 
+                                font-size: 13px;
+                                padding: 0 10px;
+                                
+                            }
+                           
+                        }
+                    }
+                }
+            }
+    
+            #pagination_area { 
+    
+                .pagination { 
+    
+                    a { 
+    
+                    }
+    
+                    .active { 
+    
+                    }
+                }
+            }
+        }
+    }
+}
