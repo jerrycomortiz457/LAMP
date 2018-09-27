@@ -12,6 +12,8 @@
             $report_number = 1;
             for($i=0;$i<count($list);$i++)
             {   
+                
+                // $arrat_list[$i]=$array_check;
                 if(preg_match('/"/', $list[$i]))
                 {
                     echo '<h1>Report '.$report_number++.'</h1><ul>';
@@ -20,10 +22,13 @@
                     if (stripos($list[$i+11],'"')>1)
                     echo '<li>Web: '.strstr($list[$i+11],'"', true).'</li>';
                     else 
-                    echo '<li>Web: '.$list[$i+11].'</li>';                 
+                    echo '<li>Web: '.$list[$i+11].'</li>';
+             
+                
                 }
                 echo '</ul>';
             }  
+           
     ?>
 </body>
 </html>
