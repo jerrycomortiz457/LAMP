@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+div.cards {
+  display: inline;
+}
+body #wrapper {
+  background-color: #006633;
+  color: white;
+}
+body #wrapper form #deck_of_cards .deck img:first-child {
+  position: relative;
+  top: 4px;
+}
+body #wrapper form #deck_of_cards .deck img:last-child {
+  position: relative;
+  bottom: 7px;
+}
