@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+div.cards {
+  display: inline;
+}
+.deck img:first-child {
+  position: relative;
+  top: 4px;
+}
+.deck img:last-child {
+  position: relative;
+  bottom: 7px;
+}
+body #wrapper {
+  padding: 20px;
+  background-color: #006633;
+  color: white;
+}
+body #wrapper h1 {
+  text-align: center;
+}
+body #wrapper form {
+  text-align: center;
+}
+body #wrapper form .newgame_btn {
+  margin: 5px;
+  height: 30px;
+}
+body #wrapper form .reset_btn {
+  margin: 5px;
+  height: 30px;
+}
+body #wrapper form .deal_btn {
+  margin: 5px;
+  height: 30px;
+}
+body #wrapper #game_table {
+  text-align: center;
+}
+body #wrapper #game_table #dealer #dealer_hand .cards img {
+  margin: 5px;
+}
+body #wrapper #game_table #player form #hand .cards img {
+  margin: 5px;
+}
+body #wrapper #game_table #player form #hand .bet_btn {
+  display: block;
+  margin: 0 auto;
+  height: 30px;
+  width: 100px;
+}
+body #wrapper #game_table #player form #hand .draw_btn {
+  display: block;
+  margin: 10px auto;
+  height: 30px;
+}
